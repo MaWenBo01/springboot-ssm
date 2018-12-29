@@ -23,6 +23,8 @@ spring:
 ########数据源配置
 #以下这四个参数为必须项，其他可选项请参考org.apache.tomcat.jdbc.pool.PoolConfiguration
 #
+
+
 datasource:
   cpgMaster:
     url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true
@@ -41,6 +43,10 @@ datasource:
     initialSize: 1
     maxWait: 10000
     testOnBorrow: true
+#mybatis.mapperLocations=classpath:mapper/*Mapper.xml
+#mybatis.configLocation=classpath:mapper/config/sqlMapConfig.xml
+#mybatis.typeAliasesPackage=com.mwb.bean
+
 
 logging:
   path: /log
