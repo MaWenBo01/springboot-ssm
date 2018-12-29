@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot-ssm-controller" />
+        <module name="springboot-ssm-dao" />
+        <module name="springboot-ssm-entity" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springboot-ssm" target="1.8" />
+      <module name="springboot-ssm-controller" target="1.8" />
+      <module name="springboot-ssm-dao" target="1.8" />
+      <module name="springboot-ssm-entity" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

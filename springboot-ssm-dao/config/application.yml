@@ -1,0 +1,52 @@
+
+  environment: perf
+########业务层配置
+########spring
+spring:
+  thymeleaf:
+    cache: false
+    mode: HTML5
+  http:
+    encoding:
+      charset:  UTF-8
+      enabled:  true
+      force:  true
+#开发阶段注释cat相关配置
+#cat:
+#  enabled: true
+#  ip: 10.15.195.70:2280:8080
+#  domain: cat
+#kafka:
+#  enabled: true
+#  brokers: 10.199.204.23:9092
+#  zknodes: 10.199.204.25:2181
+########数据源配置
+#以下这四个参数为必须项，其他可选项请参考org.apache.tomcat.jdbc.pool.PoolConfiguration
+#
+datasource:
+  cpgMaster:
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true
+    username: root
+    password: root
+    driverClassName: com.mysql.jdbc.Driver
+    validationQuery: SELECT 1
+    timeBetweenEvictionRunsMillis: 3600000
+    minEvictableIdleTimeMillis: 18000000
+    removeAbandoned: true
+    removeAbandonedTimeout: 120
+    logAbandoned: false
+    testWhileIdle: true
+    maxActive: 60
+    maxIdle: 60
+    initialSize: 1
+    maxWait: 10000
+    testOnBorrow: true
+
+logging:
+  path: /log
+  #level:
+   # com.ibatis: DEBUG
+  pattern:
+    level: DEBUG
+
+
