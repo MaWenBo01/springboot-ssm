@@ -50,11 +50,12 @@
     <modules>
         <module>springboot-ssm-entity</module>
         <module>springboot-ssm-dao</module>
-        <module>springboot-ssm-service</module>
+       <!-- <module>springboot-ssm-service</module>-->
         <module>springboot-ssm-controller</module>
         <module>springboot-ssm-entity</module>
         <module>springboot-ssm-dao</module>
         <module>springboot-ssm-controller</module>
+        <module>springboot-ssm-generators</module>
     </modules>
 
     <dependencies>

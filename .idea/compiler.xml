@@ -9,6 +9,7 @@
         <module name="springboot-ssm-controller" />
         <module name="springboot-ssm-dao" />
         <module name="springboot-ssm-entity" />
+        <module name="springboot-ssm-generators" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +17,8 @@
       <module name="springboot-ssm-controller" target="1.8" />
       <module name="springboot-ssm-dao" target="1.8" />
       <module name="springboot-ssm-entity" target="1.8" />
+      <module name="springboot-ssm-generators" target="1.8" />
+      <module name="springboot-ssm-utils" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

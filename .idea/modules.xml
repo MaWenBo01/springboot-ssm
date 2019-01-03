@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/springboot-ssm.iml" filepath="$PROJECT_DIR$/springboot-ssm.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-ssm-controller/springboot-ssm-controller.iml" filepath="$PROJECT_DIR$/springboot-ssm-controller/springboot-ssm-controller.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-ssm-dao/springboot-ssm-dao.iml" filepath="$PROJECT_DIR$/springboot-ssm-dao/springboot-ssm-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-ssm-entity/springboot-ssm-entity.iml" filepath="$PROJECT_DIR$/springboot-ssm-entity/springboot-ssm-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-ssm-generators/springboot-ssm-generators.iml" filepath="$PROJECT_DIR$/springboot-ssm-generators/springboot-ssm-generators.iml" />
     </modules>
   </component>
 </project>

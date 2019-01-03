@@ -1,6 +1,7 @@
 package com.mwb.springboot.ssm.dao;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @ServletComponentScan
@@ -13,6 +14,7 @@ public class AppApplication {
             System.setProperty("server.port", "9900");
             System.setProperty("spring.application.name", "cpg_website");
          /*   BaseApplication.main(args);*/
+            SpringApplication.run(AppApplication.class, args);
             log.info("cpg_website 已经启动");
             log.info("本次启动的系统是cpg_website");
         } catch (Exception e) {
