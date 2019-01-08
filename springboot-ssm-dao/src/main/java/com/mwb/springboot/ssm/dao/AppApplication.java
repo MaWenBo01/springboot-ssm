@@ -13,7 +13,6 @@ public class AppApplication {
             log.info("cpg_website 开始启动");
             System.setProperty("server.port", "9900");
             System.setProperty("spring.application.name", "cpg_website");
-         /*   BaseApplication.main(args);*/
             SpringApplication.run(AppApplication.class, args);
             log.info("cpg_website 已经启动");
             log.info("本次启动的系统是cpg_website");

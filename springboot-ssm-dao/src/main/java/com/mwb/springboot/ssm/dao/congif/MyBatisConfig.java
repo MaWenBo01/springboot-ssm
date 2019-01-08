@@ -7,12 +7,10 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
-//import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -33,34 +31,19 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
 
     @Resource(name = "cpgMaster")
     private DataSource dataSourceCpgMaster;
-/*    @Resource(name = "cpgSlave")
-    private DataSource dataSourceCpgSlave;*/
-
-
     @Bean(name = "sqlSessionFactoryCpgMaster")
     public SqlSessionFactory sqlSessionFactoryCpgMaster(@Qualifier("cpgMaster") DataSource dataSource) throws Exception{
         return this.sqlSessionFactory(dataSource);
     }
 
-/*
-    @Bean(name = "sqlSessionFactoryCpgSlave")
-    public SqlSessionFactory sqlSessionFactoryCpgSlave(@Qualifier("cpgSlave") DataSource dataSource) throws Exception{
-        return this.sqlSessionFactory(dataSource);
-    }
-*/
 
     private SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception{
         ResourcePatternResolver resolver = null;
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         try {
             bean.setDataSource(dataSource);
-            bean.setTypeAliasesPackage("com.wanda.upp.cpg.message.account.message,"
-                + "com.wanda.upp.cpg.message.bankcard.message,"
-                + "com.wanda.upp.cpg.message.channel.message,"
-                + "com.wanda.upp.cpg.message.common.message,"
-                + "com.wanda.upp.cpg.message.recon.message,"
-                + "com.wanda.upp.cpg.message.edge.message");
-
+           /* bean.setTypeAliasesPackage(
+                "com.wanda.upp.cpg.message.edge.message");*/
             //分页插件
             PageHelper pageHelper = new PageHelper();
             Properties properties = new Properties();
@@ -84,8 +67,9 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
     @Bean(name = "transactionManager")
     public DataSourceTransactionManager transactionManager(@Qualifier("cpgMaster") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
-
     }
+
+
 
     @Bean(name = "transactionTemplate")
     public TransactionTemplate transactionTemplate(@Qualifier("transactionManager") DataSourceTransactionManager transactionManager) {
@@ -97,16 +81,13 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 
-   /* @Bean(name = "sqlSessionCpgSlave")
-    public SqlSessionTemplate sqlSessionTemplateCpgSlave(@Qualifier("sqlSessionFactoryCpgSlave") SqlSessionFactory sqlSessionFactory) {
-        return new SqlSessionTemplate(sqlSessionFactory);
-    }*/
 
     @Bean
     @Override
     public PlatformTransactionManager annotationDrivenTransactionManager() {
         return txManager();
     }
+
 
     @Bean
     public PlatformTransactionManager txManager() {

@@ -22,21 +22,12 @@ public class MyBatisMapperScannerConfig {
         return this.mapperScannerConfigurer("sqlSessionFactoryCpgMaster");
     }
 
- /*   @Bean
-    public MapperScannerConfigurer mapperScannerConfigurerCpgSlave() {
-        return this.mapperScannerConfigurer("sqlSessionFactoryCpgSlave");
-    }*/
 
     private MapperScannerConfigurer mapperScannerConfigurer(String sqlSessionFactoryName) {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
         mapperScannerConfigurer.setSqlSessionFactoryBeanName(sqlSessionFactoryName);
         mapperScannerConfigurer.setBasePackage(
                 "com.mwb.springboot.ssm.dao.mapper"
-                /*"com.wanda.upp.cpg.website.dao.mapper.account,"
-            + "com.wanda.upp.cpg.website.dao.mapper.bankcard,"
-            + "com.wanda.upp.cpg.website.dao.mapper.common,"
-            + "com.wanda.upp.cpg.website.dao.mapper.edge,"
-            + "com.wanda.upp.cpg.website.dao.mapper.op.workflow"*/
                 );  //mapper 类
         Properties properties = new Properties();
         properties.setProperty("notEmpty", "false");
